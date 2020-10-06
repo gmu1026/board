@@ -55,4 +55,13 @@ public class BoardServiceImpl implements BoardService {
 
         boardRepository.delete(board);
     }
+
+    @Transactional
+    @Override
+    public void likeBoard(long no) {
+        Board board = boardRepository.findById(no)
+                .orElseThrow(() -> new IllegalArgumentException("not found this board"));
+
+        board.like();
+    }
 }

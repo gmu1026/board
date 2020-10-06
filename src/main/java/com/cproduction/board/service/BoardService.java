@@ -13,4 +13,5 @@ public interface BoardService {
     BoardResponseDto getBoard(long no);
     void updateBoard(long no, BoardUpdateRequestDto requestDto);
     void removeBoard(long no);
+    void likeBoard(long no);
 }

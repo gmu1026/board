@@ -24,6 +24,12 @@ public class BoardApiController {
         return ResponseEntity.ok(boardService.getBoardList());
     }
 
+    @GetMapping(value = "/api/board/{no}")
+    public ResponseEntity<?> getBoard(@PathVariable("no") long no) {
+        return ResponseEntity.ok(boardService.getBoard(no));
+    }
+
+
     @PatchMapping(value = "/api/board/{no}")
     public ResponseEntity<?> updateBoard(@PathVariable("no") long no,
                                          @RequestBody BoardUpdateRequestDto requestDto) {
